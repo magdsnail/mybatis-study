@@ -14,20 +14,13 @@ import java.util.Map;
  * @Author: wangkejing
  */
 public interface UserMapper {
-
-    List<User> getUserLike(String value);
-
     List<User> getUserList();//查询全部用户
 
     //根据id查询用户
     User getUserById(int id);
 
-    User getUserById2(Map<String, Object>map);
-
 //    inster 一个用户
     int addUser(User user);
-
-    int addUser2(Map<String, Object> map);
 
     int updateUser(User user);
 

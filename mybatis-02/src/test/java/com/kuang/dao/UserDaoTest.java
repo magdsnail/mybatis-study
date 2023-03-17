@@ -20,19 +20,6 @@ import java.util.Map;
 public class UserDaoTest {
 
     @Test
-    public  void getUserLike() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-        List<User> userList = mapper.getUserLike("%狂%");
-        for (User user : userList) {
-            System.out.println(user);
-        }
-
-        sqlSession.close();
-    }
-
-    @Test
     public void test() {
         //第一步： 获得sqlsession对象
         SqlSession sqlSession = MybatisUtils.getSqlSession();
@@ -71,20 +58,6 @@ public class UserDaoTest {
     }
 
     @Test
-    public  void getUserById2() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        HashMap<String, Object> map = new HashMap<String, Object>();
-        map.put("id", 1);
-        map.put("name", "狂神");
-
-        User user = mapper.getUserById2(map);
-        System.out.println(user);
-        sqlSession.close();
-    }
-
-    @Test
     public void addUser() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -93,26 +66,6 @@ public class UserDaoTest {
         sqlSession.commit();
         sqlSession.close();
     }
-
-    @Test
-    public  void addUser2() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        Map<String, Object> map = new HashMap<String, Object>();
-
-        map.put("userid",5);
-        map.put("userName","xiaohong");
-        map.put("password", "123456");
-
-        mapper.addUser2(map);
-
-        sqlSession.commit();
-
-        sqlSession.close();
-    }
-
-
 
     @Test
     public void updateUser() {

@@ -5,12 +5,21 @@
 <!--namespace=绑定一个对应的Dao/Mapper接口-->
 <mapper namespace="com.kuang.dao.UserMapper">
 <!--select 查询语句-->
+<!--select * from user where name like "%"#{value}"%"-->
+    <select id="getUserLike" resultType="com.kuang.pojo.User">
+        select * from user where name like #{value}
+    </select>
+
     <select id="getUserList" resultType="com.kuang.pojo.User">
         select * from user
     </select>
 
     <select id="getUserById" resultType="com.kuang.pojo.User" parameterType="int">
         select * from user where id = #{id}
+    </select>
+
+    <select id="getUserById2" resultType="com.kuang.pojo.User" parameterType="map">
+        select * from user where id = #{id} and name = #{name};
     </select>
 
 <!--对象中的属性可以直接取出来-->
