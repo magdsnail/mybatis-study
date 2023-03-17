@@ -18,6 +18,10 @@
         insert into user (id, name, pwd) values (#{id},#{name},#{pwd})
     </insert>
 
+    <insert id="addUser2" parameterType="map">
+        insert into user (id, name, pwd) values (#{userid},#{userName},#{password})
+    </insert>
+
     <update id="updateUser" parameterType="com.kuang.pojo.User">
         update user set name = #{name}, pwd = #{pwd} where id = #{id}
     </update>

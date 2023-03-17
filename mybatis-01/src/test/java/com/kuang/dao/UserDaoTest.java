@@ -5,7 +5,9 @@ import com.kuang.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * ClassName: UserDaoTest
@@ -64,6 +66,26 @@ public class UserDaoTest {
         sqlSession.commit();
         sqlSession.close();
     }
+
+    @Test
+    public  void addUser2() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        map.put("userid",5);
+        map.put("userName","xiaohong");
+        map.put("password", "123456");
+
+        mapper.addUser2(map);
+
+        sqlSession.commit();
+
+        sqlSession.close();
+    }
+
+
 
     @Test
     public void updateUser() {
