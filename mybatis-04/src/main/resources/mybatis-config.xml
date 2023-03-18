@@ -9,8 +9,13 @@
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </properties>
+    <settings>
+    <!--标准日志工厂-->
+<!--    <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
     <typeAliases>
-        <!--        <typeAlias type="com.kuang.pojo.User" alias="User"/>-->
+        <!--<typeAlias type="com.kuang.pojo.User" alias="User"/>-->
         <typeAlias type="com.kuang.pojo.User"/>
     </typeAliases>
     <environments default="development">

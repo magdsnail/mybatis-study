@@ -9,8 +9,12 @@
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
     </properties>
+    <settings>
+    <!--标准日志工厂-->
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
     <typeAliases>
-        <!--        <typeAlias type="com.kuang.pojo.User" alias="User"/>-->
+        <!--<typeAlias type="com.kuang.pojo.User" alias="User"/>-->
         <typeAlias type="com.kuang.pojo.User"/>
     </typeAliases>
     <environments default="development">
@@ -24,10 +28,10 @@
             </dataSource>
         </environment>
     </environments>
-    <!--每一个mapper.xml都需要在mybatis核心配置文件中心注册-->
+
+<!--    绑定接口-->
     <mappers>
-<!--        <mapper resource="com/kuang/dao/UserMapper.xml"/>-->
-<!--        <mapper class="com.kuang.dao.UserMapper"/>-->
-        <package name="com.kuang.dao"/>
+        <mapper class="com.kuang.dao.UserMapper"></mapper>
     </mappers>
+
 </configuration>
