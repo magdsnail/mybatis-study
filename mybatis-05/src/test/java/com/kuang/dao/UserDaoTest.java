@@ -29,7 +29,15 @@ public class UserDaoTest {
         for (User user : mapper.getUsers()) {
             System.out.println(user);
         }
+        User user = mapper.getUserByID(1);
+        System.out.println(user);
 
+
+//        int xiaoming2 = mapper.insterUser(new User(6, "xiaoming2", "2323213"));
+
+//        int xiaoyang2 = mapper.updateUser(new User(4, "xiaoyang2", "12"));
+
+//        mapper.deleteUser(4);
         sqlSession.close();
 
     }
