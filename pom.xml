@@ -53,6 +53,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis.caches</groupId>
+            <artifactId>mybatis-ehcache</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
     </dependencies>
 
     <!--在build中配置resources 来防止我们资源导出失败的问题-->
