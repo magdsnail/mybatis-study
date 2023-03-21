@@ -15,7 +15,6 @@
     </association>
 </resultMap>
 
-
 <!--    ===========================================================================-->
     <select id="getStudent" resultMap="StudentTeacher">
         select * from student
