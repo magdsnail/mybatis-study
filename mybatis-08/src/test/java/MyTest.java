@@ -66,12 +66,13 @@ public class MyTest {
 //        map.put("views", 9999);
 
 
-        map.put("title", "java如此简单2");
-        map.put("author", "狂神说2");
-        map.put("id", "25366a91801545e6a37a096ec72f3a3e");
+//        map.put("title", "java如此简单2");
+//        map.put("author", "狂神说2");
+//        map.put("id", "25366a91801545e6a37a096ec72f3a3e");
+
         mapper.updateBlogSet(map);
 
-//        List<Blog> blogs = mapper.queryBlogChoose(map);
+//        List<Blog> blogs = mapper.queryBlogIF(map);
 
 //        for (Blog blog : blogs) {
 //            System.out.println(blog);

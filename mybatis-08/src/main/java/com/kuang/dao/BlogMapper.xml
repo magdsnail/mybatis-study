@@ -8,15 +8,19 @@
         values (#{id}, #{title}, #{author}, #{createTime}, #{views})
     </insert>
 
+    <sql id="if-title-author">
+        <if test="title != null">
+            and title = #{title}
+        </if>
+        <if test="author != null">
+            and author = #{author}
+        </if>
+    </sql>
+
     <select id="queryBlogIF" parameterType="map" resultType="blog">
         select * from blog
         <where>
-            <if test="title != null">
-                and title = #{title}
-            </if>
-            <if test="author != null">
-                and author = #{author}
-            </if>
+            <include refid="if-title-author"></include>
         </where>
     </select>
 
@@ -49,6 +53,5 @@
         </set>
         where id = #{id}
     </update>
-
 
 </mapper>
