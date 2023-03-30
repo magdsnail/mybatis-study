@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuang.dao.InformationMapper">
+    <select id="list" resultType="information">
+        select * from information where 1=1
+    </select>
+
+    <sql id="field-type-num">
+        <if test="field != null">
+            ${field} =
+            <if test="type == 'add'">
+                ${field} + ${num}
+            </if>
+        </if>
+    </sql>
+
+    <update id="autoIncrement" parameterType="map">
+        update information 
+        <set>
+            <include refid="field-type-num"></include>
+        </set>
+    </update>
+</mapper>
