@@ -31,7 +31,6 @@ public class UserDaoTest {
 
         sqlSession.close();
     }
-
     @Test
     public void getUserByLimit() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
